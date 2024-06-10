@@ -20,7 +20,7 @@ const Sidebar = () => {
     <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto'>
       {activeMenu && (<>
         <div className="flex justify-between items-center">
-        <Link to="/" onClick={() => setActiveMenu(false)} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+        <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
           <SiShopware/><span>Shoppy</span>
         </Link>
         <TooltipComponent content="Menu" position='BottomCenter'>
@@ -37,7 +37,7 @@ const Sidebar = () => {
               <NavLink
               to={`/${Link.name}`}
               key={Link.name}
-              onClick={()=>{}}
+              onClick={handleCloseSideBar}
               className={({ isActive }) => isActive ? activeLink : normalLink}>
               {Link.icon}
               <span className='capitalize'>
