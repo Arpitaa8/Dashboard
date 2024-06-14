@@ -10,7 +10,7 @@ import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
   
   
   const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -43,20 +43,20 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
-      <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu/>}/>
+      <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu/>}/>
 
       <div className='flex'>
         <NavButton title="Cart" 
-          customFunc={() => {}} color="blue" 
+          customFunc={() => {}} color={currentColor} 
           icon={<FiShoppingCart/>}
         />
         <NavButton title="Chat" 
-          customFunc={() => {}} color="blue" 
+          customFunc={() => {}} color={currentColor} 
           icon={<BsChatLeft/>}
         />
         <NavButton title="Notifications"
           dotColor="#03C9D7"
-          customFunc={() => {}} color="blue" 
+          customFunc={() => {}} color={currentColor} 
           icon={<RiNotification3Line/>}
         />
         <TooltipComponent 
