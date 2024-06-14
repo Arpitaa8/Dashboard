@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 import { ECommerce, Orders, Employees, Customer, Kanban, Editor, Calendar, ColorPicker, ColorMapping, Line, Area, Bar, Pie, Pyramid, Financial, Stacked } from './pages';
 
@@ -72,6 +71,7 @@ const App = () => {
                 <Route path='/stacked' element={<Stacked />} />
               </Routes>
             </div>
+            <Footer/>
           </div>
         </div>
       </BrowserRouter>
